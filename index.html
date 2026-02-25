@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPN Calc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <div class="calculator">
+
+      <!-- Screen -->
+      <div class="display-band">
+        <div class="display-bezel">
+          <div class="display" id="display">
+            <span class="disp-segment" id="disp-op1"></span>
+            <span class="disp-segment" id="disp-op2"></span>
+            <span class="disp-segment disp-oper" id="disp-oper"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button panel -->
+      <div class="button-panel">
+
+        <!-- Top operator row: + [spacer] × -->
+        <div class="op-row op-row-top">
+          <button class="op-btn" data-op="+" aria-label="Add">+</button>
+          <div class="op-spacer"></div>
+          <button class="op-btn" data-op="*" aria-label="Multiply">×</button>
+        </div>
+
+        <!-- Numpad: 3 cols -->
+        <div class="keypad">
+          <button class="num-btn" data-val="7">7</button>
+          <button class="num-btn" data-val="8">8</button>
+          <button class="num-btn" data-val="9">9</button>
+
+          <button class="num-btn" data-val="4">4</button>
+          <button class="num-btn" data-val="5">5</button>
+          <button class="num-btn" data-val="6">6</button>
+
+          <button class="num-btn" data-val="1">1</button>
+          <button class="num-btn" data-val="2">2</button>
+          <button class="num-btn" data-val="3">3</button>
+
+          <!-- Row: 0 (span 2), . -->
+          <button class="num-btn zero-btn" data-val="0">0</button>
+          <button class="num-btn" data-val=".">.</button>
+
+          <!-- ENTER spans full width -->
+          <button class="action-btn enter-btn" id="btn-enter">ENTER</button>
+        </div>
+
+        <!-- Bottom operator row: − [spacer] ÷ -->
+        <div class="op-row op-row-bottom">
+          <button class="op-btn" data-op="-" aria-label="Subtract">−</button>
+          <div class="op-spacer"></div>
+          <button class="op-btn" data-op="/" aria-label="Divide">÷</button>
+        </div>
+
+        <!-- Reset — tight to body -->
+        <div class="reset-row">
+          <button class="reset-btn" id="btn-reset">RESET</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Phase status -->
+    <div class="phase-label" id="phase-label">ENTER FIRST NUMBER</div>
+
+    <!-- RPN instructions -->
+    <div class="rpn-guide">
+      <p class="guide-title">HOW TO USE — RPN MODE</p>
+      <p>Unlike a standard calculator, the operator comes <em>last</em>.</p>
+      <ol>
+        <li>Type your first number, press <strong>ENTER</strong></li>
+        <li>Type your second number</li>
+        <li>Select an operator — it locks in orange</li>
+        <li>Press <strong>ENTER</strong> again to compute</li>
+        <li>Press <strong>RESET</strong> to start over</li>
+      </ol>
+      <p class="guide-example">Example: &nbsp;4 &nbsp;<strong>ENTER</strong>&nbsp; 2 &nbsp;<strong>×</strong>&nbsp; <strong>ENTER</strong>&nbsp; →&nbsp; 8</p>
+    </div>
+
+    <!-- Video -->
+    <div class="video-wrap">
+      <p class="guide-title">RPN IN ACTION — HP-32SII</p>
+      <iframe
+        width="100%"
+        height="360"
+        frameborder="0"
+        loading="lazy"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; web-share"
+        allowfullscreen
+        src="https://commons.wikimedia.org/wiki/File:Typing_the_calculation_for_%228_times_6%22_into_a_pocket_calculator_HP-32SII_which_uses_RPN_logic.webm?embedplayer=true">
+      </iframe>
+    </div>
+
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
